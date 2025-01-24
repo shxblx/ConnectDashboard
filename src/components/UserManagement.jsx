@@ -118,7 +118,6 @@ const UserManagement = () => {
       doc.text(`Phone: ${user.phone}`, 14, 45);
       doc.text(`Website: ${user.website}`, 14, 55);
 
-     
       doc.setFontSize(14);
       doc.text("Address", 14, 70);
       doc.setFontSize(12);
@@ -127,7 +126,6 @@ const UserManagement = () => {
       doc.text(`City: ${user.address.city}`, 14, 100);
       doc.text(`Zipcode: ${user.address.zipcode}`, 14, 110);
 
-     
       doc.setFontSize(14);
       doc.text("Company", 14, 125);
       doc.setFontSize(12);
@@ -160,7 +158,7 @@ const UserManagement = () => {
           />
           <button
             onClick={downloadPDF}
-            className="w-full md:w-auto md:ml-4 bg-blue-500 text-white px-4 py-2 rounded mt-2 md:mt-0"
+            className="w-full md:w-auto md:ml-4 border text-blue-500 px-4 py-2 rounded mt-2 md:mt-0"
           >
             Download PDF
           </button>
@@ -199,7 +197,7 @@ const UserManagement = () => {
                   <td className="p-2 block md:table-cell" data-label="Actions">
                     <button
                       onClick={() => setSelectedUser(user)}
-                      className="bg-blue-500 text-white px-3 py-1 rounded"
+                      className="border text-orange-500 px-3 py-1 rounded"
                     >
                       View Details
                     </button>
