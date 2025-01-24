@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const DashboardLayout = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const location = useLocation();
   const toggleMobileMenu = () => {
     setIsMobileOpen(!isMobileOpen);
   };
@@ -11,6 +12,9 @@ const DashboardLayout = () => {
   const closeMobileView = () => {
     setIsMobileOpen(false);
   };
+
+  const isActive = (path) => location.pathname === path;
+
   return (
     <>
       <div className="flex h-screen">
@@ -35,7 +39,11 @@ const DashboardLayout = () => {
                   <li className="mb-2">
                     <Link
                       to="/dashboard/analytics"
-                      className="block p-2 hover:bg-orange-500 rounded"
+                      className={`block p-2 rounded ${
+                        isActive("/dashboard/analytics")
+                          ? "bg-orange-500 text-white"
+                          : "hover:bg-orange-500"
+                      }`}
                       onClick={closeMobileView}
                     >
                       Analytics
@@ -44,7 +52,11 @@ const DashboardLayout = () => {
                   <li className="mb-2">
                     <Link
                       to="/dashboard/users"
-                      className="block p-2 hover:bg-orange-500 rounded"
+                      className={`block p-2 rounded ${
+                        isActive("/dashboard/users")
+                          ? "bg-orange-500 text-white"
+                          : "hover:bg-orange-500"
+                      }`}
                       onClick={closeMobileView}
                     >
                       Users
@@ -53,7 +65,11 @@ const DashboardLayout = () => {
                   <li className="mb-2">
                     <Link
                       to="/dashboard/tasks"
-                      className="block p-2 hover:bg-orange-500 rounded"
+                      className={`block p-2 rounded ${
+                        isActive("/dashboard/tasks")
+                          ? "bg-orange-500 text-white"
+                          : "hover:bg-orange-500"
+                      }`}
                       onClick={closeMobileView}
                     >
                       Task Manager
@@ -72,7 +88,11 @@ const DashboardLayout = () => {
               <li className="mb-2">
                 <Link
                   to="/dashboard/analytics"
-                  className="block p-2 hover:bg-blue-100 rounded"
+                  className={`block p-2 rounded ${
+                    isActive("/dashboard/analytics")
+                      ? "bg-orange-500 text-white"
+                      : "hover:bg-blue-100"
+                  }`}
                 >
                   Analytics
                 </Link>
@@ -80,7 +100,11 @@ const DashboardLayout = () => {
               <li className="mb-2">
                 <Link
                   to="/dashboard/users"
-                  className="block p-2 hover:bg-blue-100 rounded"
+                  className={`block p-2 rounded ${
+                    isActive("/dashboard/users")
+                      ? "bg-orange-500 text-white"
+                      : "hover:bg-blue-100"
+                  }`}
                 >
                   User Management
                 </Link>
@@ -88,7 +112,11 @@ const DashboardLayout = () => {
               <li className="mb-2">
                 <Link
                   to="/dashboard/tasks"
-                  className="block p-2 hover:bg-blue-100 rounded"
+                  className={`block p-2 rounded ${
+                    isActive("/dashboard/tasks")
+                      ? "bg-orange-500 text-white"
+                      : "hover:bg-blue-100"
+                  }`}
                 >
                   Task Manager
                 </Link>
