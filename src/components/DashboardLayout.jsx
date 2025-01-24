@@ -23,7 +23,7 @@ const DashboardLayout = () => {
 
         {isMobileOpen && (
           <div
-            className="fixed insert-0 bg-black/50 z-30 md:hidden"
+            className="fixed inset-0 bg-black/50 z-30 md:hidden"
             onClick={closeMobileView}
           >
             <div
@@ -43,7 +43,7 @@ const DashboardLayout = () => {
                   </li>
                   <li className="mb-2">
                     <Link
-                      to="/dashboard/analytics"
+                      to="/dashboard/users"
                       className="block p-2 hover:bg-orange-500 rounded"
                       onClick={closeMobileView}
                     >
@@ -67,7 +67,7 @@ const DashboardLayout = () => {
 
         <div className="hidden md:block w-64 bg-white shadow-md">
           <nav className="p-4">
-            <h2 className="text 2xl font-bold mb-4">Dashboard</h2>
+            <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
             <ul>
               <li className="mb-2">
                 <Link
